@@ -1,7 +1,7 @@
 angular_charsRemaining
 ======================
 
-AngularJS directive chars remaining 
+An <a href="http://angularjs.org/">AngularJS</a> directive chars remaining 
 
 This is my directive for counting number of characters in input texts
   		
