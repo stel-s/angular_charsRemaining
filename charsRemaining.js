@@ -14,9 +14,11 @@ app.directive('charsRemaining',function($compile){
     link:function(scope,elem,attrs){
 		var maxChars = scope.firstMaxChars;
 		var br=angular.element("</br>");
-	  	var span = angular.element('<span ></span>');
+	//using span.text()	  	
+		var span = angular.element('<span ></span>');
 	    elem.after(br);
 	    br.after(span);
+	//using {{}}
 	    var markup =$compile( "<span> {{remaining}} </span> ")(scope);
 	    span.after(markup);
         console.log(elem);
@@ -27,11 +29,13 @@ app.directive('charsRemaining',function($compile){
               console.log(newValue,oldValue);
               if (newValue){
                  var remaining=maxChars-newValue.length;
-                 scope.remaining=remaining;
+                 
                      if(remaining>0){
+						 scope.remaining=remaining;
                          span.text(remaining);
                  	 }else{
                     	span.text("exceeded")
+						scope.remaining="exceeded";
                      }
               }else {
               scope.remaining=maxChars;
