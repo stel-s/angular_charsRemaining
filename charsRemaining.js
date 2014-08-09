@@ -7,6 +7,7 @@ app.controller('MainCtrl', function($scope) {
 });
 
 
+
 app.directive('charsRemaining',function($compile){
   
   return{
@@ -19,8 +20,9 @@ app.directive('charsRemaining',function($compile){
 	    elem.after(br);
 	    br.after(span);
 	//using {{}}
-	    var markup =$compile( "<span> {{remaining}} </span> ")(scope);
-	    span.after(markup);
+	    var markup =$compile( "<span>using interpolation: {{remaining}} </span> ")(scope);
+	    span.after(br);
+	    br.after(markup);
         console.log(elem);
             scope.$watch(function(){
               var val=elem.val();
@@ -31,11 +33,12 @@ app.directive('charsRemaining',function($compile){
                  var remaining=maxChars-newValue.length;
                  
                      if(remaining>0){
-						 scope.remaining="using {{}}:"+remaining;
-                         span.text(remaining);
+						             span.text(remaining);
+						            scope.remaining=remaining;
+                        
                  	 }else{
                     	span.text("exceeded")
-						scope.remaining="{{}}:exceeded";
+					  	scope.remaining="exceeded";
                      }
               }else {
               scope.remaining=maxChars;
@@ -46,4 +49,3 @@ app.directive('charsRemaining',function($compile){
        }
   	}
  })
-
