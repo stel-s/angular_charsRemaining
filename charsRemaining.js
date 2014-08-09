@@ -31,11 +31,11 @@ app.directive('charsRemaining',function($compile){
                  var remaining=maxChars-newValue.length;
                  
                      if(remaining>0){
-						 scope.remaining=remaining;
+						 scope.remaining="using {{}}:"+remaining;
                          span.text(remaining);
                  	 }else{
                     	span.text("exceeded")
-						scope.remaining="exceeded";
+						scope.remaining="{{}}:exceeded";
                      }
               }else {
               scope.remaining=maxChars;
