@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+  <head>
+    <meta charset="utf-8" />
+ 
+    
+    
+    <script  src="https://code.angularjs.org/1.2.21/angular.js" data-semver="1.2.21"></script>
+    <script src="charsRemaining.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+  	<label>Generic max chars from controller</label><input type="text" ng-model="input" chars-remaining/>
+</br>
+$scope.maxChars:{{maxChars}}
+	</br>
+</br>
+	<label>Max Chars from element attribute:</label><input type="text" ng-model="input" chars-remaining="34"/>
+</br> 
+</br>
+<label>Max Chars from element attribute:</label><input type="text" ng-model="input" chars-remaining="55"/>
+</br>
+</br>
+	<label>Max Chars different for each input from controller:</label><input type="text" ng-model="input" chars-remaining="firstMaxChars"/> 
+</br>
+$scope.firstMaxChars:{{firstMaxChars}}
+</br>
+</br>
+ <label>Max Chars different for each input from controller:</label><input type="text" ng-model="input" chars-remaining="secondMaxChars"/>
+</br>
+
+$scope.secondMaxChars:{{secondMaxChars}}
+  </body>
+
+</html>
+
