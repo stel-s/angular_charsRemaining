@@ -47,7 +47,7 @@ app.directive('charsRemaining',function($compile){
 				span.text("You have "+remaining+" chars left");
 				scope.remaining="You have "+remaining+" chars left";
                             }else{
-						//stop user from entering more chars
+						//stop user from entering more chars when exceeded
 						//elem.val(oldValue);
                     		span.text("exceeded max chars");
 			 	scope.remaining="exceeded max char";
