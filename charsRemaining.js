@@ -3,7 +3,7 @@ var app = angular.module('MyApp', []);
 app.controller('MainCtrl', function($scope) {
   $scope.maxChars="34";
   $scope.firstMaxChars = 28;
-  $scope.secondMaxChars=54;
+  $scope.secondMaxChars=$scope.firstMaxChars/2;
 });
 
 
@@ -43,6 +43,7 @@ app.directive('charsRemaining',function($compile){
               	if (newValue){
                         var remaining=maxChars-newValue.length;
             		    if(remaining>0){
+				
 				span.text("You have "+remaining+" chars left");
 				scope.remaining="You have "+remaining+" chars left";
                             }else{
