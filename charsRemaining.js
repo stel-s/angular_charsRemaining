@@ -11,7 +11,7 @@ app.directive('charsRemaining',function($compile){
   
   return{
     restrict:'A',
-    //for use multiple times in same view with different maxchars
+    //create new scope for use multiple times in same view with different maxchars
     scope:true,
     link:function(scope,elem,attrs){
       //var maxChars = Number(attrs.charsRemaining);  
