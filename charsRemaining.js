@@ -43,15 +43,15 @@ app.directive('charsRemaining',function($compile){
               	if (newValue){
                         var remaining=maxChars-newValue.length;
             		    if(remaining>0){
-				span.text(remaining);
-				scope.remaining=remaining;
+				span.text("You have "+remaining+" chars left");
+				scope.remaining="You have "+remaining+" chars left";
                             }else{
-                    		span.text("exceeded");
-			 	scope.remaining="exceeded";
+                    		span.text("exceeded max chars");
+			 	scope.remaining="exceeded max char";
                      	     }
               	}else {
-                	scope.remaining=maxChars;
-                	span.text(maxChars);
+                	scope.remaining="Max Chars: "+maxChars;
+                	span.text("Max Chars: "+maxChars);
             }
            }
           );
